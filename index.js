@@ -29,6 +29,7 @@ var debug = require('debug')('morgan')
 var deprecate = require('depd')('morgan')
 var onFinished = require('on-finished')
 var onHeaders = require('on-headers')
+var moment = require('moment')
 
 /**
  * Array of CLF month names.
@@ -249,10 +250,13 @@ morgan.token('date', function getDateToken(req, res, format) {
   switch (format || 'web') {
     case 'clf':
       return clfdate(date)
+		case 'moment':
+			return momentdate(date)
     case 'iso':
       return date.toISOString()
     case 'web':
       return date.toUTCString()
+
   }
 });
 
@@ -360,6 +364,19 @@ function clfdate(dateTime) {
   return pad2(date) + '/' + month + '/' + year
     + ':' + pad2(hour) + ':' + pad2(mins) + ':' + pad2(secs)
     + ' +0000'
+}
+
+/**
+ * Format a Date with moment
+ *
+ * @private
+ * @param {Date} dateTime
+ * @return {string}
+ */
+
+function momentdate(dateTime) {
+	var m = moment(dateTime)
+	return m.format("DD/MM/YYYY hh:mm:ss.SSS")
 }
 
 /**

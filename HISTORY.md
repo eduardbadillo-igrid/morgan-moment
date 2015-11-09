@@ -1,3 +1,9 @@
+1.7.0 / 2015-01-09
+==================
+
+	* deps: moment@~2.10.6
+	* Add `momentdate(dateTime)` to allow custom formatted date
+
 1.6.1 / 2015-07-03
 ==================
 
