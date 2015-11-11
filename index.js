@@ -256,7 +256,8 @@ morgan.token('date', function getDateToken(req, res, format) {
       return date.toISOString()
     case 'web':
       return date.toUTCString()
-
+		default:
+			return momentdate(date, format)
   }
 });
 
@@ -374,9 +375,12 @@ function clfdate(dateTime) {
  * @return {string}
  */
 
-function momentdate(dateTime) {
+function momentdate(dateTime, format) {
 	var m = moment(dateTime)
-	return m.format("DD/MM/YYYY hh:mm:ss.SSS")
+	if (!format)
+		return m.format("DD/MM/YYYY hh:mm:ss.SSS")
+	else
+		return m.format(format)
 }
 
 /**
