@@ -378,7 +378,7 @@ function clfdate(dateTime) {
 function momentdate(dateTime, format) {
 	var m = moment(dateTime)
 	if (!format)
-		return m.format("DD/MM/YYYY hh:mm:ss.SSS")
+		return m.format("DD/MM/YYYY HH:mm:ss.SSS")
 	else
 		return m.format(format)
 }
