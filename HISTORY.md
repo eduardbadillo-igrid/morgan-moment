@@ -1,4 +1,8 @@
-1.7.0 / 2015-01-09
+1.7.3 / 2015-11-12
+==================
+	* Now we can use :date[moment] or :date[<moment_format_string>] to format to any needs
+
+1.7.0 / 2015-11-09
 ==================
 
 	* deps: moment@~2.10.6
