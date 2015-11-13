@@ -1,3 +1,7 @@
+1.7.4 / 2015-11-12
+==================
+	* Version bump
+
 1.7.3 / 2015-11-12
 ==================
 	* Now we can use :date[moment] or :date[<moment_format_string>] to format to any needs
